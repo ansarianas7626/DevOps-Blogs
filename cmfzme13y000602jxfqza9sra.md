@@ -1,5 +1,5 @@
 ---
-title: "What is DevOps"
+title: "What is DevOps?"
 datePublished: Thu Sep 25 2025 16:21:07 GMT+0000 (Coordinated Universal Time)
 cuid: cmfzme13y000602jxfqza9sra
 slug: what-is-devops
@@ -7,13 +7,15 @@ tags: devops, devops-articles, abhishek-veeramalla
 
 ---
 
+## What is DevOps?
+
 So in today’s fast pace world tech companies and startup want to deliver their application/software in quick manner this is where DevOps comes into picture.
 
 DevOps is nothing but a culture or process of improving the application delivery by ensuring that there is a proper automation, quality, monitoring/observability and continuous testing.
 
 Example: let say delivering software manually takes 10 days with manual approach this is where DevOps comes in the picture it automates the process with the help of various CI/CD Tools Jenkins etc.
 
-# Why DevOps?
+## Why DevOps?
 
 Back in the days application deployment process was manual there were several roles like Developer, Server Admin , System admin . There was different teams for each tasks due to several teams worked separately which often caused delays, bugs, and communication gaps. DevOps bridges this gap by encouraging collaboration, automation, and continuous improvement
 
@@ -40,7 +42,7 @@ Some key benefits of DevOps include:
 * 🔄 **Continuous feedback loop** for quick improvements
     
 
-# How DevOps work?
+## How DevOps work?
 
 DevOps relies on several tools to make process faster
 
@@ -52,7 +54,7 @@ Automation - Few tasks are repetitive so they are automated like testing, deploy
 
 Monitoring - Systems are continuously monitored to detect problems quickly and improve performance.
 
-# What are the different DevOps Tools?
+## What are the different DevOps Tools?
 
 Remember DevOps isn’t about tools only but tools makes it a powerful process.
 
