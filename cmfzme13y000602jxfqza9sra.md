@@ -3,7 +3,7 @@ title: "What is DevOps?"
 datePublished: Thu Sep 25 2025 16:21:07 GMT+0000 (Coordinated Universal Time)
 cuid: cmfzme13y000602jxfqza9sra
 slug: what-is-devops
-tags: devops, devops-articles, abhishek-veeramalla
+tags: devops, devops-articles, devops-journey, devopscommunity, devopslearning, abhishek-veeramalla
 
 ---
 
@@ -11,7 +11,7 @@ tags: devops, devops-articles, abhishek-veeramalla
 
 So in today’s fast pace world tech companies and startup want to deliver their application/software in quick manner this is where DevOps comes into picture.
 
-DevOps is nothing but a culture or process of improving the application delivery by ensuring that there is a proper automation, quality, monitoring/observability and continuous testing.
+DevOps is a culture or process of improving the application delivery by ensuring that there is a proper automation, quality, monitoring/observability and continuous testing.
 
 Example: let say delivering software manually takes 10 days with manual approach this is where DevOps comes in the picture it automates the process with the help of various CI/CD Tools Jenkins etc.
 
