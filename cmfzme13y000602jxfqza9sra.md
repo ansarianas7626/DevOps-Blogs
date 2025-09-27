@@ -46,13 +46,13 @@ Some key benefits of DevOps include:
 
 DevOps relies on several tools to make process faster
 
-Continuous Integration (CI) - A team of software developers merge their code on GitHub repository to catch bug quickly.
+**Continuous Integration (CI) -** A team of software developers merge their code on GitHub repository to catch bug quickly.
 
-Continuous Delivery(CD) - Changes in the code are automatically detected and prepared for release.
+**Continuous Delivery(CD) -** Changes in the code are automatically detected and prepared for release.
 
-Automation - Few tasks are repetitive so they are automated like testing, deployment and monitoring.
+**Automation -** Few tasks are repetitive so they are automated like testing, deployment and monitoring.
 
-Monitoring - Systems are continuously monitored to detect problems quickly and improve performance.
+**Monitoring -** Systems are continuously monitored to detect problems quickly and improve performance.
 
 ## What are the different DevOps Tools?
 
@@ -70,3 +70,11 @@ Remember DevOps isn’t about tools only but tools makes it a powerful process.
     
 
 [What is DevOps Video](https://www.youtube.com/watch?v=Ou9j73aWgyE&list=PLdpzxOOAlwvIKMhk8WhzN1pYoJ1YU8Csa&index=2)
+
+---
+
+## Short Form & Abbreviations
+
+CI - Continuous Integration
+
+CD - Continuous Delivery(CD)
