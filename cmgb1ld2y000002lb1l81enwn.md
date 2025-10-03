@@ -89,7 +89,6 @@ The 3 digits (`777`) represent permissions for:
     
 * **Third digit (7)** → **Others / World** (everyone else)Each digit is made up of:
     
-
 * `4` → Read (r)
     
 * `2` → Write (w)
@@ -117,11 +116,7 @@ Using `chmod 777` is risky, especially on servers, because it gives complete acc
 
 ## How to write shell script?
 
-We will write a simple shell script that created a folder and files in in its present directory and we will also provide certain permission to a file.
-
-### How to write shell script?
-
-Example: creating a folder & files.
+We will write a simple shell script that creates a folder and some files in that folder also provide certain permission to a file.
 
 **Step 1:**
 
@@ -143,7 +138,7 @@ touch firstfile secondfile
 
 **Step 3:** Grant permission:
 
-```
+```bash
 chmod +x firstShellScript.sh
 ```
 
