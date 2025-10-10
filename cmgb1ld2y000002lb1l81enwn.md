@@ -72,10 +72,20 @@ Some basic commands useful in scripting:
     
 * `cd` → change directory
     
+* `mv` → changes file names and move files from one directory to other.
+    
+* `read -p` → to take input from users
+    
+* `rm filename` → to delete file
+    
+* `rm -r filename` → to delete directory
+    
+* `rm * fileName` → to delete all files with same name
+    
 
 ## File Access permission in Linux
 
-Whenever we execute any executable file in Linux it will deny even though the file is created by you but still it wont allow you to do so for security reason we have to grant permission to a file. So in linux there are categories to whom file is allowed to read, write and execute.
+Whenever we execute any executable file in Linux it will deny even though the file is created by you but still it wont allow you to do so for security reason we have to grant permission to a file. So in Linux there are categories to whom file is allowed to read, write and execute.
 
 **chmod 777 scriptFile.sh**
 
@@ -147,6 +157,95 @@ chmod +x firstShellScript.sh
 ```bash
 ./firstShellScript.sh
 ```
+
+**Step 5:** Variable, Arguments, if else conditionals, for loop, while loop, functions.
+
+1. **Variable -** In shell scripts, variables are used to store data like numbers, text, or file paths, which can be reused later.
+    
+    ```bash
+    #!/bin/bash
+    
+    # Variables store data
+    name="Anas"
+    age=21
+    
+    echo "Name: $name"
+    echo "Age: $age"
+    ```
+    
+2. **Arguments -** Arguments are values passed to a script from the command line when it runs. `$1`, `$2` refer to the first and second arguments, respectively.
+    
+    ```bash
+    #!/bin/bash
+    
+    # Arguments passed from command line
+    # Example: ./script.sh Mumbai 5
+    city=$1
+    visits=$2
+    
+    echo "City: $city"
+    echo "Number of visits: $visits"
+    ```
+    
+3. **If-Else** – Conditional statements used for decision making. If the condition is true, the `if` block executes; otherwise, the `else` block runs.
+    
+    ```bash
+    #!/bin/bash
+    #if else elif conditional statement
+    age=21
+    
+    if [ $age -ge 18 ]; then
+        echo "You are an adult."
+    elif [ $age -eq 18 ]; then
+        echo "You are just became an adult."
+    else
+        echo "You are not an adult."
+    fi
+    ```
+    
+4. **For and While Loops** – Loops are used for repetitive tasks.
+    
+    * `for` loop iterates over a sequence or range of items.
+        
+    * ```bash
+        #!/bin/bash
+        #for loop
+        visits=3
+        
+        echo "Counting visits:"
+        for ((i=1; i<=$visits; i++))
+        do
+            echo "Visit $i"
+        done
+        ```
+        
+    * `while` loop continues to run as long as the condition is true.
+        
+    * ```bash
+        #!/bin/bash
+        #while loop
+        counter=1
+        
+        while [ $counter -le 3 ]
+        do
+            echo "This is loop iteration $counter"
+            ((counter++))
+        done
+        ```
+        
+5. **Functions** – Functions are reusable blocks of code that perform a specific task. You can define a function and call it multiple times, keeping the code short and organized.
+    
+    ```bash
+    #!/bin/bash
+    #Functions
+    greet() {
+        echo "Hello $1! Welcome to $2."
+    }
+    
+    # Calling the function
+    greet "Anas" "Mumbai"
+    ```
+    
 
 ## What is the role shell scripting in DevOps?
 
