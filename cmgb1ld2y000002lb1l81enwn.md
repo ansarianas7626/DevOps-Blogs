@@ -208,29 +208,29 @@ chmod +x firstShellScript.sh
     * `for` loop iterates over a sequence or range of items.
         
     * ```bash
-        #!/bin/bash
-        #for loop
-        visits=3
-        
-        echo "Counting visits:"
-        for ((i=1; i<=$visits; i++))
-        do
-            echo "Visit $i"
-        done
+          #!/bin/bash
+          #for loop
+          visits=3
+          
+          echo "Counting visits:"
+          for ((i=1; i<=$visits; i++))
+          do
+              echo "Visit $i"
+          done
         ```
         
     * `while` loop continues to run as long as the condition is true.
         
     * ```bash
-        #!/bin/bash
-        #while loop
-        counter=1
-        
-        while [ $counter -le 3 ]
-        do
-            echo "This is loop iteration $counter"
-            ((counter++))
-        done
+          #!/bin/bash
+          #while loop
+          counter=1
+          
+          while [ $counter -le 3 ]
+          do
+              echo "This is loop iteration $counter"
+              ((counter++))
+          done
         ```
         
 5. **Functions** – Functions are reusable blocks of code that perform a specific task. You can define a function and call it multiple times, keeping the code short and organized.
@@ -257,6 +257,32 @@ chmod +x firstShellScript.sh
     
 * **Configuration management** → Automating setup of environments (installing software, updating packages, configuring servers).
     
+
+## 🛠️ Error Handling in Shell Scripting
+
+When writing shell scripts, errors can happen — like trying to delete a non-existent file, create a directory that already exists, or running a command without proper permissions. Error handling ensures your script can **catch problems and respond safely**, instead of just crashing.
+
+### 1️⃣ Check command success using `$?`
+
+Every command in Linux returns an **exit status**.
+
+* `0` → success
+    
+* Non-zero → failure
+    
+
+Example:
+
+```bash
+#!/bin/bash
+
+mkdir myFolder
+if [ $? -eq 0 ]; then
+    echo "Folder created successfully."
+else
+    echo "Failed to create folder."
+fi
+```
 
 ## Short forms and abbreviation?
 
