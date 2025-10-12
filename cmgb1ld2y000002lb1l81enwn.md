@@ -208,29 +208,29 @@ chmod +x firstShellScript.sh
     * `for` loop iterates over a sequence or range of items.
         
     * ```bash
-          #!/bin/bash
-          #for loop
-          visits=3
-          
-          echo "Counting visits:"
-          for ((i=1; i<=$visits; i++))
-          do
-              echo "Visit $i"
-          done
+            #!/bin/bash
+            #for loop
+            visits=3
+            
+            echo "Counting visits:"
+            for ((i=1; i<=$visits; i++))
+            do
+                echo "Visit $i"
+            done
         ```
         
     * `while` loop continues to run as long as the condition is true.
         
     * ```bash
-          #!/bin/bash
-          #while loop
-          counter=1
-          
-          while [ $counter -le 3 ]
-          do
-              echo "This is loop iteration $counter"
-              ((counter++))
-          done
+            #!/bin/bash
+            #while loop
+            counter=1
+            
+            while [ $counter -le 3 ]
+            do
+                echo "This is loop iteration $counter"
+                ((counter++))
+            done
         ```
         
 5. **Functions** – Functions are reusable blocks of code that perform a specific task. You can define a function and call it multiple times, keeping the code short and organized.
@@ -283,6 +283,83 @@ else
     echo "Failed to create folder."
 fi
 ```
+
+## What is Cron job is shell scripting?
+
+A **Cron Job** is a **scheduled task in Linux/Unix** that runs automatically at specified intervals.
+
+* Think of it like a **reminder for your computer** to run scripts or commands at certain times, without you manually triggering them.
+    
+* Cron Jobs are essential in **DevOps automation**, for tasks like backups, resource monitoring, log rotation, and more.
+    
+
+### How to create a cronjob in shell scripting
+
+A cron job line has **5 timing fields + command**:
+
+```bash
+* * * * * /path/to/script.sh
+- - - - -
+| | | | |
+| | | | ----- Day of week (0–7, 0=Sunday)
+| | | ------- Month (1–12)
+| | --------- Day of month (1–31)
+| ----------- Hour (0–23)
+------------- Minute (0–59)
+```
+
+**Step 1:** Create a Shell Script that is being automated.
+
+```bash
+#!/bin/bash
+
+#####################################################
+# Author: Ansari Anas
+# Date: 11th Oct 2025
+# Version: v1.0
+# Script Purpose: This Script will report the AWS resource usage
+####################################################
+
+set -x
+
+# Resources Thats we are going to track
+# 1. AWS S3
+# 2. AWS EC2
+# 3. AWS Lambda
+# 4. AWS IAM Users
+
+# list S3 buckets
+echo "Print list of S3 buckets"
+aws s3 ls > resourceTracker
+
+# list EC2 instances
+echo "Print list of EC2 Instances"
+# aws ec2 describe-instances
+aws ec2 describe-instances | jq '.Reservations[].Instances[].InstanceId'
+
+# list lambda
+echo "Print list of Lambda functions"
+
+aws lambda list-functions >> resourceTracker
+
+# list IAM Users
+echo "Print list of IAM users"
+aws iam list-users
+```
+
+**Step 2:** Create cronjob: write below command in your Linux machine.
+
+```bash
+crontab -e
+```
+
+**Step 3:** Write a cronjob script in crontab.
+
+```bash
+0 7 * * * /home/ubuntu/scriptPathHere >> /home/ubuntu/resourceTracker_cron.log 2>&1
+```
+
+Now you have created a successfully cronjob the tracking script will run automatically at 7 AM every day, every month, every year.
 
 ## Short forms and abbreviation?
 
