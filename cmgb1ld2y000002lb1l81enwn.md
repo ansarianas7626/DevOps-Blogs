@@ -361,6 +361,15 @@ crontab -e
 
 Now you have created a successfully cronjob the tracking script will run automatically at 7 AM every day, every month, every year.
 
+### **Key Points**
+
+* Cron Jobs run **automatically in the background**, no need to manually execute scripts
+    
+* Use **full paths** in scripts to avoid errors
+    
+* Always **log output and errors**, so you can debug if something goes wrong
+    
+
 ## Short forms and abbreviation?
 
 * **sh** → Bourne Shell
