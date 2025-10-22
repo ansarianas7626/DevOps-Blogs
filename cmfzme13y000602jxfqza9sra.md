@@ -1,8 +1,9 @@
 ---
-title: "What is DevOps?"
+title: "Introduction to DevOps – How It Works and Why It’s Important"
 datePublished: Thu Sep 25 2025 16:21:07 GMT+0000 (Coordinated Universal Time)
 cuid: cmfzme13y000602jxfqza9sra
 slug: what-is-devops
+cover: https://cdn.hashnode.com/res/hashnode/image/upload/v1761158132536/9154eb11-d8d3-40fe-af3b-e665cb40a971.png
 tags: devops, devops-articles, devops-journey, devopscommunity, devopslearning, abhishek-veeramalla
 
 ---
