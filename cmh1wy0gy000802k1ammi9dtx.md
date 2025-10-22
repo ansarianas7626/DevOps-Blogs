@@ -16,6 +16,18 @@ text he
 
 text here\\
 
+## SVN vs Git?
+
+text he
+
 ## What is GitHub?
+
+text here
+
+## How to connect local Git to Github?
+
+text here
+
+## Git commands?
 
 text here
