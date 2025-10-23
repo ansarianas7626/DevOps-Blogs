@@ -237,6 +237,105 @@ git push
 git add . && git commit -m "Quick update" && git push
 ```
 
+## 🌿 What is Branching in Git?
+
+Branching in Git means creating a **separate line of development** within the same project.  
+It allows multiple people (or even a single developer) to work on different features, fixes, or experiments — **without affecting the main codebase**.
+
+Think of a branch as a **copy of your project** where you can make changes freely.  
+Once your changes are complete and tested, you can **merge** them back into the main branch.
+
+---
+
+### 🧱 Example
+
+Let’s say you are building a website:
+
+* The `main` branch has your live, working site.
+    
+* You create a new branch called `feature/contact-form` to add a new contact page.
+    
+* You work on it, test it, and when it’s ready — merge it back into `main`.
+    
+
+If something goes wrong, your main website still remains safe.
+
+---
+
+### ⚙️ Why Branching is Useful
+
+* Allows multiple developers to work **in parallel**
+    
+* Keeps the **main branch stable**
+    
+* Makes **code reviews and testing** easier
+    
+* Supports **experimentation** without risk
+    
+
+---
+
+### 🧩 Common Branch Commands
+
+| Command | Description |
+| --- | --- |
+| `git branch` | Lists all existing branches |
+| `git branch <name>` | Creates a new branch |
+| `git checkout <branch>` | Switches to a specific branch |
+| `git checkout -b <branch>` | Creates and switches to a new branch |
+| `git merge <branch>` | Merges another branch into the current one |
+| `git branch -d <branch>` | Deletes a branch |
+
+## **What is Branching Strategy in Git?**
+
+A branching strategy defines how different branches are used and managed in a Git workflow to ensure smooth development, testing, and deployment.
+
+---
+
+**🔹 main / master branch:**
+
+* Always contains the **latest stable and production-ready code**.
+    
+* Only **tested and approved code** from the release or hotfix branches gets merged here.
+    
+* This is the branch that goes to **production deployment**.
+    
+
+---
+
+**🔹 feature branch:**
+
+* Used for **developing new features or functionalities**.
+    
+* Created from the `develop` branch (or `main` if no develop branch exists).
+    
+* Once the feature is complete and tested, it’s merged back into `develop`.
+    
+
+---
+
+**🔹 release branch:**
+
+* Created when you are **preparing for a new production release**.
+    
+* Used for **final testing, bug fixes, and version tagging**.
+    
+* After testing, it’s merged into both `main` (for deployment) and `develop` (to sync fixes).
+    
+
+---
+
+**🔹 hotfix / bugfix branch:**
+
+* Used for **urgent fixes directly on production**.
+    
+* Created from the `main` branch to fix live issues quickly.
+    
+* After fixing, merged into both `main` and `develop`.
+    
+
+---
+
 ## Git commands?
 
 ### ⚙️ Configuration Commands
