@@ -88,7 +88,7 @@ Other Git hosting platforms: **GitLab, Bitbucket, SourceForge**
 
 To start using Git, you first need to install and initialize it in your local project folder.
 
-### 🧩 Step 1: Install Git
+### Step 1: Install Git
 
 1. Go to the official website: [https://git-scm.com/downloads](https://git-scm.com/downloads)
     
@@ -107,121 +107,122 @@ If you see a version number, Git is successfully installed. ✅
 
 ---
 
-### 🧑‍💻 Step 2: Configure Git (Set Your Identity)
-
-Before using Git for the first time, set your name and email — they’ll appear in your commit history.
+### Step 2: Initialize Local Repository
 
 ```bash
-git config --global user.name "Your Name"
-git config --global user.email "your@email.com"
-```
-
-You can check if it’s saved correctly:
-
-```bash
-git config --list
-```
-
----
-
-### 📂 Step 3: Initialize a Git Repository
-
-Go to your project folder using `cd` command and initialize Git:
-
-```bash
-cd my-project
+cd path/to/your/project
 git init
 ```
 
-🔹 This creates a hidden folder named `.git` inside your project — it tracks all your file changes.
+* This command turns your project folder into a Git repository.
+    
+* It creates a hidden `.git` folder to track changes.
+    
 
 ---
 
-### 🧾 Step 4: Add Files to the Staging Area
+### Step 3: Create a Remote Repository on GitHub
 
-When you create or modify files, Git doesn’t automatically track them.  
-You have to **add** them to the staging area first:
+1. Log in to GitHub.
+    
+2. Click **New Repository** → give it a name → click **Create repository**.
+    
+3. Copy the HTTPS URL, e.g.:
+    
 
 ```bash
-git add filename
+https://github.com/username/repo-name.git
 ```
 
-or to add all files at once:
+---
+
+### Step 4: Add Remote to Your Local Repo
+
+```bash
+git remote add origin https://github.com/username/repo-name.git
+```
+
+* Now your local repository is connected to the remote repository called `origin`.
+    
+
+---
+
+### Step 5: Stage and Commit Your Changes
 
 ```bash
 git add .
-```
-
----
-
-### 🧱 Step 5: Commit Your Changes
-
-Once files are staged, you can **commit** them with a short message describing the change.
-
-```bash
 git commit -m "Initial commit"
 ```
 
-📝 A commit is like a **snapshot** of your project at a certain point in time.
-
 ---
 
-### ☁️ Step 6: Create a New Repository on GitHub
+### Step 6: Push to GitHub Using Personal Access Token (PAT)
 
-1. Go to [GitHub](https://github.com) → Click **“New Repository”**.
+1. Run:
     
-2. Give it a name (example: `my-project`) and click **Create repository**.
-    
-3. You’ll get a **remote repository URL**, something like:
-    
-    ```bash
-    https://github.com/your-username/my-project.git
-    ```
-    
-
----
-
-### 🌐 Step 7: Connect Local Repo to GitHub
-
-Now, connect your local project (the one you initialized with `git init`) to the GitHub repository you just created.
-
-```bash
-git remote add origin https://github.com/your-username/my-project.git
-```
-
-Check the connection:
-
-```bash
-git remote -v
-```
-
----
-
-### 🚀 Step 8: Push Your Code to GitHub
-
-Now that your local repo is connected, push your code to GitHub:
 
 ```bash
 git push -u origin main
 ```
 
-🧠 Note:
-
-* In older Git versions, the default branch name was `master`.
-    
-* If your repo uses `master`, then use this instead:
-    
-    ```bash
-    git push -u origin master
-    ```
+* Git will prompt:
     
 
-This uploads your project to GitHub for the first time 🎉  
-Now you can see your files on your GitHub repository page!
+```bash
+Username: <your GitHub username>
+Password: <paste your personal access token here>
+```
+
+> Paste your **PAT** instead of your password.
+
+* Adjust the branch name if it’s not `main`.
+    
 
 ---
 
-### 🔁 Step 9: Future Changes Workflow
+### Step 7: Optional — Store Credentials for Future Pushes
+
+```bash
+git config --global credential.helper store
+```
+
+* This stores your PAT locally.
+    
+* Future pushes/pulls will not require entering the token again.
+    
+
+---
+
+## **Optional Shortcut — PAT in URL (Not Recommended for Security)**
+
+```bash
+git remote set-url origin https://<USERNAME>:<PAT>@github.com/username/repo-name.git
+```
+
+* **Warning:** The token will be stored in your shell history, which is insecure.
+    
+* Safer approach: use the prompt + credential helper method.
+    
+
+---
+
+## **Summary Workflow**
+
+```bash
+cd project-folder
+git init
+git remote add origin https://github.com/username/repo-name.git
+git add .
+git commit -m "Initial commit"
+git push -u origin main
+# Username: your GitHub username
+# Password: paste your PAT
+git config --global credential.helper store   # optional
+```
+
+---
+
+### 🔁 Step 8: Future Changes Workflow
 
 Once setup is done, your normal day-to-day workflow looks like this:
 
