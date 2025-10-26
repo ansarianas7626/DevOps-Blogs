@@ -487,6 +487,76 @@ A branching strategy defines how different branches are used and managed in a Gi
 
 ---
 
+## What is Git Hooks?
+
+**Git Hooks** are scripts that run automatically when certain events occur in a Git repository — such as a **commit**, **push**, or **merge**.
+
+In simple terms, they are small automation tools that execute at different stages of the Git workflow.  
+For example:
+
+* When you run `git commit`, a **pre-commit hook** can automatically format your code or run tests.
+    
+* When you run `git push`, a **pre-push hook** can ensure that all tests pass before the code is pushed.
+    
+
+### 🧩 Common Git Hooks
+
+| Hook Name | Triggered When | Example Use |
+| --- | --- | --- |
+| `pre-commit` | Before a commit is made | Lint or format code |
+| `commit-msg` | After commit message is entered | Validate commit message format |
+| `pre-push` | Before code is pushed | Run tests before pushing |
+| `post-merge` | After a merge completes | Reinstall dependencies if required |
+
+### ⚙️ Location
+
+Hooks are stored inside the `.git/hooks/` directory of your repository.  
+By default, you’ll find sample hook files there (like `pre-commit.sample`).  
+You can rename them, make them executable, and add your own custom automation.
+
+---
+
+## ⚙️ What is GitHub Actions?
+
+**GitHub Actions** is a powerful CI/CD (Continuous Integration and Continuous Deployment) tool built right into **GitHub**.  
+It allows developers to **automate workflows** — like testing, building, and deploying code — directly from their repositories.
+
+In simple terms, it helps you run scripts automatically whenever something happens in your repo — for example, when you **push code**, **open a pull request**, or **merge changes**.
+
+### 🚀 Why Use GitHub Actions?
+
+* **Automate repetitive tasks** like testing and deployment
+    
+* **Improve code quality** by running lint checks automatically
+    
+* **Save time** by building, testing, and deploying your app right from GitHub
+    
+* **Supports any language or platform** (Node.js, Python, Docker, etc.)
+    
+
+### 🧩 Key Concepts
+
+| Term | Meaning |
+| --- | --- |
+| **Workflow** | The entire automation process (defined in a `.yml` file) |
+| **Job** | A set of steps that run on the same machine |
+| **Step** | An individual task (like running a command or script) |
+| **Action** | A reusable component or script used in workflows |
+| **Runner** | The server that runs your workflow (GitHub-hosted or self-hosted) |
+
+### 📁 Where It Lives
+
+GitHub Actions workflows are stored in your repo under:
+
+```bash
+.github/workflows/
+```
+
+Each workflow file is written in **YAML**, for example:  
+`deploy.yml`, `test.yml`, or `ci.yml`.
+
+---
+
 ## Git commands?
 
 ### ⚙️ Configuration Commands
