@@ -433,6 +433,34 @@ modules/           → reusable components
 
 ---
 
+## What are terraform modules
+
+Modules is a way of writing reusable components.
+
+**Example:** you have to create a ec2 instance with ALB so you write code and use it as a module wherever it is required just execute the modules you don’t have to write modules again and again for that similar works it saves efforts and time.
+
+* **Existing Modules -** Terraform provides some ready made codes like for creating s3 dynamo DB, EC2 IAM etc. these are prebuilt modules that can be used.
+    
+* **Write your own modules -** If you want to write your own custom modules you can do that too or you can take existing modules and makes changes in it as per your requirement.
+    
+
+---
+
+## **Problems with Terraform**
+
+* **State file is single source of truth -** if you misconfigured, delete it accidently, messed up with state file you compromised your state file and once it is compromised your infrastructure is also compromised.
+    
+* **Manual changes to the cloud provider cannot be identified and auto-corrected -**
+    
+* **Not a GitOps friendly tool. Don’t play well with Flux or Argo CD.**
+    
+* **Can become very complex and difficult to manage.**
+    
+* **Trying to position as a configuration management tool as well.**
+    
+
+---
+
 ## Short Forms & Abbreviations
 
 | Term | Full Form |
