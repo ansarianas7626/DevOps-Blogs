@@ -247,7 +247,7 @@ A Terraform project usually follows a standard file structure. Each file in the 
 
 ---
 
-### **1\.** [`main.tf`](http://main.tf)
+### **1.** [`main.tf`](http://main.tf)
 
 This is the **core configuration file**.  
 It usually contains:
@@ -263,7 +263,7 @@ In simple words, [`main.tf`](http://main.tf) is where the main infrastructure co
 
 ---
 
-### **2\.** [`variables.tf`](http://variables.tf)
+### **2.** [`variables.tf`](http://variables.tf)
 
 This file is used to declare all the input variables that your Terraform code will use.  
 You define:
@@ -281,7 +281,7 @@ This makes your configuration flexible and reusable.
 
 ---
 
-### **3\.** [`outputs.tf`](http://outputs.tf)
+### **3.** [`outputs.tf`](http://outputs.tf)
 
 This file defines the **output values** that Terraform should display after the infrastructure is created.  
 Common outputs:
@@ -299,7 +299,7 @@ Outputs help share important details with other tools or team members.
 
 ---
 
-### **4\.** [`provider.tf`](http://provider.tf) (optional but common)
+### **4.** [`provider.tf`](http://provider.tf) (optional but common)
 
 Some teams prefer keeping provider configuration in a separate file.  
 This file may contain:
@@ -315,7 +315,7 @@ It keeps things cleaner when there are multiple providers.
 
 ---
 
-### **5\.** [`input.tf`](http://input.tf) (alternate name for variables)
+### **5.** [`input.tf`](http://input.tf) (alternate name for variables)
 
 Some projects use names like [`input.tf`](http://input.tf) instead of [`variables.tf`](http://variables.tf).  
 Purpose remains the same:  
@@ -323,7 +323,7 @@ Purpose remains the same:
 
 ---
 
-### **6\.** `terraform.tfvars`
+### **6.** `terraform.tfvars`
 
 This file assigns actual values to the variables declared in [`variables.tf`](http://variables.tf).  
 You store:
@@ -339,7 +339,7 @@ This allows separation of configuration (code) from values (environment-specific
 
 ---
 
-### **7\.** `terraform.tfstate` (auto-generated)
+### **7.** `terraform.tfstate` (auto-generated)
 
 This file stores the **current state** of your infrastructure.  
 It tracks:
@@ -356,14 +356,14 @@ Also, in production, you should keep it in **remote backends** (like S3) to avoi
 
 ---
 
-### **8\.** `terraform.tfstate.backup` (auto-generated backup)
+### **8.** `terraform.tfstate.backup` (auto-generated backup)
 
 Terraform automatically creates a backup of the last state file when you run `apply`.  
 This helps recover state in case something goes wrong.
 
 ---
 
-### **9\.** `modules/` folder (optional)
+### **9.** `modules/` folder (optional)
 
 If you’re using modules, they live inside a `modules` directory.  
 Modules help you reuse code and standardize your infrastructure.
@@ -379,13 +379,13 @@ Example modules:
 
 ---
 
-### **10\.** [`versions.tf`](http://versions.tf) (optional but common)
+### **10.** [`versions.tf`](http://versions.tf) (optional but common)
 
 This file pins the Terraform version and provider versions to avoid compatibility issues.
 
 ---
 
-### **11\.** [`README.md`](http://README.md)
+### **11.** [`README.md`](http://README.md)
 
 Always recommended.  
 Explains:
@@ -415,6 +415,23 @@ versions.tf        → Terraform & provider version
 terraform.tfstate  → state file (auto-generated)  
 modules/           → reusable components
 ```
+
+---
+
+## Terraform flow with AWS
+
+![](https://cdn.hashnode.com/res/hashnode/image/upload/v1763456173195/b015cddf-05b5-4330-a574-2bcc15ef491d.jpeg align="center")
+
+* DevOps Engineer creates a terraform script and stored in a GitHub so others can also contribute and use the script.
+    
+* Jenkins and any other CI tools tracks the Version control system like GitHub, bitbucket, GitLab and execute the terraform script.
+    
+* Never Push or store your terraform state file in GitHub repo because it contains some sensitive information related to infrastructure Always store terraform state file in remote backend like AWS s3 or Azure Storage container.
+    
+* State file tracks the infrastructure if any changes in made like upgradation of computer resource and any AWS azure services. so with state file terraform understand what was resources before and what changes is done like Git works
+    
+
+---
 
 ## Short Forms & Abbreviations
 
