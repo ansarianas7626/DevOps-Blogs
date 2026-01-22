@@ -70,8 +70,6 @@ Remember DevOps isn’t about tools only but tools makes it a powerful process.
 * **AWS, Azure, GCP** – Cloud platforms that support DevOps practices
     
 
-[What is DevOps Video](https://www.youtube.com/watch?v=Ou9j73aWgyE&list=PLdpzxOOAlwvIKMhk8WhzN1pYoJ1YU8Csa&index=2)
-
 ---
 
 ## Short Form & Abbreviations
